@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+}
+
+p {
+  color: black;
+}
+
+.btn-common {
+  width: 220px;
+  height: 50px;
+  border-radius: 25px;
+  margin: auto;
+  color: white;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border: none;
+  box-shadow: 0px 4px 5px gray;
+  font-size: 1rem;
+}
+.btn-common:hover {
+  transform: scale(1.03);
+}
+
+.functioning__btn {
+  width: 330px;
+  height: 75px;
+  margin: 8px auto;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  position: relative;
+  border: none;
+  box-shadow: 0px 4px 5px #F5EDFF;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.functioning__btn:hover {
+  transform: scale(1.03);
+  background-color: #F5EDFF;
+}
+.functioning__btn::before {
+  position: absolute;
+  left: 40px;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-family: "shrikhand", sans-serif;
+  text-align: center;
+  padding: 0.3rem 0;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 25px;
+}
+footer h5 {
+  font-family: "shrikhand", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding-bottom: 25px;
+}
+footer nav {
+  line-height: 1.5rem;
+}
+footer li:first-child::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f2e7";
+  margin-right: 15px;
+}
+footer li:nth-child(2)::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f4c4";
+  margin-right: 10px;
+}
+footer a {
+  color: white;
+}
+
+#search {
+  text-align: center;
+  background-color: #f6f6f6;
+  padding-bottom: 50px;
+  margin-bottom: 45px;
+}
+#search div {
+  background-color: #EAEAEA;
+  width: 100%;
+  box-shadow: 0px -3px 2px #D5D5D5;
+  margin-bottom: 40px;
+}
+#search form::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f3c5";
+}
+#search input {
+  border: none;
+  background: transparent;
+  text-align: center;
+  margin: 16px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+#search h2 {
+  margin: 0 65px;
+}
+#search p {
+  margin: 20px;
+}
+
+h3 {
+  margin-left: 20px;
+  font-size: 1.3rem;
+}
+
+#functioning {
+  display: flex;
+  flex-direction: column;
+}
+#functioning button:nth-child(2)::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f3cd";
+  color: gray;
+}
+#functioning button:nth-child(3)::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0ca";
+  color: gray;
+}
+#functioning button:nth-child(4)::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f54e";
+  color: gray;
+}
+
+/*# sourceMappingURL=style.css.map */
