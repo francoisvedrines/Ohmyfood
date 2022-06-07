@@ -94,6 +94,12 @@ p {
   top: 24px;
   color: black;
 }
+.restaurant__card div::before:hover {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  color: #9356DC;
+}
 .restaurant__card h4 {
   color: black;
 }
@@ -102,7 +108,7 @@ p {
   content: "Nouveau";
   position: absolute;
   padding: 5px 10px;
-  color: darken #99E2D0, 60%;
+  color: #1b6150;
   background-color: #99E2D0;
   right: 10px;
   top: 15px;
