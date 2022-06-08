@@ -17,6 +17,10 @@ p {
   color: black;
 }
 
+a {
+  color: black;
+}
+
 .btn-common {
   width: 220px;
   height: 50px;
@@ -70,57 +74,6 @@ p {
   border-radius: 50%;
 }
 
-.restaurant__card {
-  width: 340px;
-  margin: 15px auto;
-  border-radius: 18px;
-  box-shadow: 0px 4px 5px #F5EDFF;
-  position: relative;
-}
-.restaurant__card:hover {
-  transform: scale(1.01);
-}
-.restaurant__card img {
-  width: 100%;
-  height: 175px;
-  object-fit: cover;
-  border-radius: 18px 18px 0 0;
-}
-.restaurant__card div {
-  padding: 18px 0 18px 10px;
-  position: relative;
-}
-.restaurant__card div i {
-  position: absolute;
-  top: 23px;
-  right: 37px;
-  font-size: 1.6rem;
-}
-.restaurant__card div:hover i {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f004";
-  background: linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-h4 {
-  color: black;
-}
-
-.banner::after {
-  content: "Nouveau";
-  position: absolute;
-  padding: 5px 10px;
-  color: #1b6150;
-  background-color: #99E2D0;
-  right: 10px;
-  top: 15px;
-  border-radius: 2px;
-}
-
 header h1 {
   font-size: 2rem;
   font-family: "shrikhand", sans-serif;
@@ -132,7 +85,6 @@ footer {
   background-color: #353535;
   color: white;
   padding: 25px;
-  margin-top: 30px;
 }
 footer h5 {
   font-family: "shrikhand", sans-serif;
@@ -218,6 +170,9 @@ h3 {
   }
 }
 
+#restaurant {
+  margin-bottom: 30px;
+}
 @media screen and (min-width: 768px) {
   #restaurant > div {
     display: flex;
@@ -228,14 +183,167 @@ h3 {
   }
 }
 
-#menu img {
+.restaurant__card {
+  width: 340px;
+  margin: 15px auto;
+  border-radius: 18px;
+  box-shadow: 0px 4px 5px #F5EDFF;
+  position: relative;
+}
+.restaurant__card:hover {
+  transform: scale(1.01);
+}
+.restaurant__card img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
+}
+.restaurant__card div {
+  padding: 18px 0 18px 10px;
+  position: relative;
+}
+.restaurant__card div::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  top: 23px;
+  font-weight: 400;
+  right: 37px;
+  font-size: 1.6rem;
+  position: absolute;
+  font-weight: 400;
+}
+.restaurant__card div:hover::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  top: 23px;
+  font-weight: 900;
+  right: 37px;
+  font-size: 1.6rem;
+  position: absolute;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.restaurant__card h4 {
+  color: black;
+}
+
+.banner::after {
+  content: "Nouveau";
+  position: absolute;
+  padding: 5px 10px;
+  color: #1b6150;
+  background-color: #99E2D0;
+  right: 10px;
+  top: 15px;
+  border-radius: 2px;
+}
+
+header {
+  position: relative;
+}
+header a::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f060";
+  font-size: 2rem;
+  position: absolute;
+  left: 25px;
+  top: 13px;
+}
+header img {
   height: 256px;
   width: 100%;
+  display: block;
   object-fit: cover;
 }
-#menu img .title {
-  border-radius: 25px 25px 0 0;
-  margin-top: -20px;
+
+#menu {
+  z-index: 1;
+  border-radius: 25px 25px 0;
+  margin-top: -50px;
+  background-color: #f6f6f6;
+  position: relative;
+}
+#menu h2 {
+  padding: 20px 30px;
+}
+#menu h2::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  top: 22px;
+  font-weight: 400;
+  right: 50px;
+  font-size: 1.6rem;
+  position: absolute;
+}
+#menu h2::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  top: 22px;
+  font-weight: 900;
+  right: 50px;
+  font-size: 1.6rem;
+  position: absolute;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: translateY(50%);
+  opacity: 0;
+}
+#menu h2:hover::after {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+  transform: translateY(0%);
+}
+#menu h3 {
+  font-weight: 100;
+}
+#menu h3 ~ div {
+  background: white;
+  border-radius: 25px;
+  margin: 13px auto;
+  max-width: 500px;
+}
+#menu h4 {
+  padding: 12px 0 0 20px;
+}
+#menu p {
+  font-size: 0.9rem;
+  padding: 0 0 8px 18px;
+}
+#menu > div:last-child {
+  display: flex;
+  background: none;
+  background: #f6f6f6;
+  margin: 0;
+  padding: 30px 0 80px;
+}
+@media screen and (min-width: 992px) {
+  #menu > div:nth-child(2) {
+    display: flex;
+  }
+}
+#menu > div:nth-child(2) article {
+  margin: 0 20px;
+}
+@media screen and (min-width: 992px) {
+  #menu > div:nth-child(2) article {
+    flex: 1;
+  }
+}
+
+.menu__description {
+  display: flex;
+  flex-direction: row;
+}
+.menu__description p:nth-child(2) {
+  margin-left: auto;
+  margin-right: 10px;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */
