@@ -41,15 +41,11 @@ header {
         &::after{
             @include m.heart(900,22px,50px);
             @include m.heart-gradient;
-            transform: translateY(50%);
-            opacity:0;
         }
             
         &:hover::after{
-                opacity: 1;
-                transition: all 1s ease-in-out;
-                transform: translateY(0%);
-            }   
+            @include m.heart-hover;
+        }        
     }  
 
     h3{
@@ -64,11 +60,12 @@ header {
     }
 
     h4{
-        padding: 12px 0 0 20px;
+        padding: 12px 0 0 12px;
+        font-size: 1rem;
     }
     p{
-        font-size: 0.9rem;
-        padding: 0 0 8px 18px;
+        font-size: 0.8rem;
+        padding: 5px 9px 12px 12px;
     }
 
      > div:last-child{

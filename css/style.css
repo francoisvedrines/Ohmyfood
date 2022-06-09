@@ -213,7 +213,7 @@ h3 {
   position: absolute;
   font-weight: 400;
 }
-.restaurant__card div:hover::after {
+.restaurant__card div::after {
   font-family: "Font Awesome 5 Free";
   content: "\f004";
   top: 23px;
@@ -225,6 +225,11 @@ h3 {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  opacity: 0;
+}
+.restaurant__card div:hover::after {
+  transition: opacity 1s 0.3s;
+  opacity: 1;
 }
 .restaurant__card h4 {
   color: black;
@@ -291,13 +296,11 @@ header img {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  transform: translateY(50%);
   opacity: 0;
 }
 #menu h2:hover::after {
+  transition: opacity 1s 0.3s;
   opacity: 1;
-  transition: all 1s ease-in-out;
-  transform: translateY(0%);
 }
 #menu h3 {
   font-weight: 100;
@@ -309,11 +312,12 @@ header img {
   max-width: 500px;
 }
 #menu h4 {
-  padding: 12px 0 0 20px;
+  padding: 12px 0 0 12px;
+  font-size: 1rem;
 }
 #menu p {
-  font-size: 0.9rem;
-  padding: 0 0 8px 18px;
+  font-size: 0.8rem;
+  padding: 5px 9px 12px 12px;
 }
 #menu > div:last-child {
   display: flex;
