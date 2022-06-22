@@ -1,0 +1,179 @@
+@use "./../utils/variable" as *;
+@use "./../utils/mixins" as m;
+@use "./../utils/keyframes" as k;
+
+
+header {
+    position: relative;
+    
+        a::before{
+            font-family: "Font Awesome 5 Free"; font-weight:900; content: "\f060";
+            font-size: 2rem;
+            position: absolute;
+            left:25px;
+            top:13px;
+        }
+
+        img{
+        height: 256px;
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        }
+}
+
+/* section menu*/
+#menu{
+    z-index: 1;
+    border-radius: 25px 25px 0 ;
+    margin-top: -50px;
+    background-color: $color-bgd-main;
+    position: relative;  
+    @include m.tablette{
+        width: 85%;
+        margin: -50px auto 0;
+    }
+    
+    h2{
+        font-family: "Shrikhand", sans-serif;
+        font-weight: 500;
+        padding: 20px 30px;
+    
+        
+        /*transition coeur*/
+        &::before{
+            @include m.heart(400,22px,50px);
+        }
+    
+        &::after{
+            @include m.heart(900,22px,50px);
+            @include m.heart-gradient;
+        }
+                 
+        &:hover::after{
+            @include m.heart-hover;
+        }        
+    }  
+    
+
+    h3{
+        font-weight: 100;
+        font-family: "Roboto", sans-serif;
+        position: relative;
+        
+        &::before{
+            content: "";
+            height: 3px;
+            width: 50px;    
+            background-color: $color-tertiary ;
+            position: absolute;
+            top: 26px;  
+        }
+    }
+
+    > div:nth-child(2){
+        @include m.desktop{
+            display: flex;
+        }
+    }
+    article{
+        padding: 0 15px;
+        overflow: hidden;
+        @include m.desktop{
+            flex: 1;
+        }     
+    }
+
+    // bouton commander
+    > div:last-child{
+        display: flex;
+        background: none;
+        background: $color-bgd-main;
+        margin: 0;
+        padding:30px 0 80px ;
+    }     
+    // boucle sur menu
+    @for $i from 1 through 4 {
+        .menu__card:nth-child(#{$i}) {
+            animation-delay: 170ms*$i;
+        }
+    }
+}
+
+// ligne menu 
+.menu__card{
+    background: white;    
+    border-radius: 15px;
+    margin: 13px auto;
+    max-width: 550px;
+    box-shadow: 0px 4px 5px #d5d5d5;
+    overflow: hidden;
+    animation: menu both 0.9s;
+    display: flex;
+    flex-direction: row;
+
+// prix
+    >p{
+        font-weight: 700;
+        padding-top: 34px;
+        margin-right: 20px;
+        margin-left: auto;
+    }  
+
+// boite verte
+    .icon{
+        background: $color-tertiary; 
+        margin-right: -3.9rem; 
+        width: 62px;   
+        justify-content: flex-end;      
+    }
+
+    &:hover .icon{
+       
+        transition: all 0.5s;
+        margin-right: 0;
+    }
+
+// icone check 
+    i{
+        font-size: 2rem;
+        color: white;
+        padding: 15px;
+    }
+
+    &:hover .fa-circle-check{
+        animation: icheck .5s;
+    }
+    
+}
+
+/* bloc de gauche dans ligne de menu */
+.menu__title{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    h4{
+        padding: 12px 0 0 12px;
+        font-size: 1rem;
+        font-family: "Roboto", sans-serif;
+        @include m.shorten;
+    }
+
+    p{
+        font-size: 0.85rem;
+        padding: 5px 30px 12px 12px;
+        @include m.shorten;
+    }
+     
+}
+  
+
+
+   
+    
+   
+    
+
+
+

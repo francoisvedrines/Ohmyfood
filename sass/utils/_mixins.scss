@@ -1,0 +1,133 @@
+@use "../utils/variable" as *;
+
+// media queries
+
+@mixin tablette {
+    @media screen and (min-width: map-get($breakpoints, tablette)){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: map-get($breakpoints, desktop)){
+        @content;
+    }
+}
+
+
+// bouton commun
+@mixin btn-common{
+    width: 220px;
+    height: 50px;
+    border-radius: 25px;
+    margin: auto;
+    color: white;
+    background: linear-gradient($color-secondary , $color-primary);
+    border: none;
+    box-shadow: 0px 3px 5px #b9b3b3;
+    font-size: 1rem;
+    cursor: pointer;
+    
+    &:hover{
+    @include hover;
+    background: linear-gradient($bgd-hover2 , $bgd-hover1);
+    }
+}
+
+// bouton rubrique fonctionnement
+@mixin functioning__btn{
+    width: 330px;
+    height: 75px;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: $color-bgd-main; 
+    position: relative;
+    border: none;
+    box-shadow: 0px 4px 5px #F5EDFF;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+
+    i{
+        color: gray;
+        position: absolute;
+        left: 30px;
+    }
+
+    &:hover {
+        @include hover;
+        background-color: #F5EDFF;
+    }
+    &:hover i{
+        color: $color-primary;
+    }
+}  
+
+// effet survol général
+
+@mixin hover {
+    transform: scale(1.05);
+    transition: transform linear .5s ;
+    box-shadow: 0px 2px 3px $color-shadow-hover;  
+}
+   
+// numérotation des bouttons fonctionnement{
+ @mixin increment { 
+    counter-increment: steps;
+    content: "" counter(steps);
+    position: absolute;
+    left: -13px;
+    top: 24px;
+    color: white;
+    font-weight: 400;
+    background-color: $color-primary;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+   
+
+// coeur 
+@mixin heart($font-weight:400, $top:23px, $right:37px) {
+    font-family: "Font Awesome 5 Free"; content: "\f004";
+    top:$top;
+    font-weight:$font-weight;
+    right:$right;
+    font-size: 1.6rem;
+    position: absolute;
+}
+
+// dégradé coeur
+@mixin heart-gradient{
+    background: linear-gradient($color-primary,$color-secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;       
+    transform: scale(0);
+}
+
+// effet remplissage coeur
+@mixin heart-hover{
+    transition: all ease 0.5s;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+// bannière nouveau
+@mixin new-banner{
+    content:"Nouveau";
+    position: absolute;
+    padding: 5px 10px;
+    color: $color-text-banner;
+    background-color: $color-tertiary;
+    right: 10px;
+    top: 15px;
+    border-radius: 2px;
+}
+
+
+// tronquer + ...
+@mixin shorten{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

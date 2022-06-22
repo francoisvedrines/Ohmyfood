@@ -1,0 +1,181 @@
+@use "../utils/variable" as *;
+@use "../utils/mixins" as m;
+@use "./../utils/keyframes" as k;
+
+
+/* animation chargement page accueil*/
+.loader{
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background: black;
+    opacity: 0.80;
+    animation: loaderbgd 3s;
+    animation-fill-mode: forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    p{
+        background: linear-gradient($color-primary,$color-secondary);
+        font-family: "shrikhand" , sans-serif;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: loader forwards 3s;   
+    }
+}
+
+
+
+/* recherche ville + titre*/
+#search{
+    text-align: center;
+    background-color: $color-bgd-main;
+    padding-bottom: 50px;
+    margin-bottom: 45px;
+
+    div{
+        background-color:#EAEAEA;
+        width: 100%;  
+        box-shadow: 0px -3px 2px #D5D5D5;
+        margin-bottom: 40px;
+    }
+
+    form::before{
+        font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f3c5";
+    }
+
+
+    input{
+        border: none;
+        background: transparent;
+        text-align: center;
+        margin: 16px 0;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    h2{
+        margin: 0 65px;
+    }
+  
+    p{
+        margin: 20px;
+    }
+}
+
+/* bouton standard*/
+.btn-common{
+    @include m.btn-common;
+}
+
+/* section fonctionnement*/
+
+h3{
+    margin: 30px 20px;
+    font-size: 1.3rem;
+    @include m.tablette{
+        text-align: center;
+        margin: 50px 0 30px;
+    }
+
+}
+
+#functioning{
+    display: block;
+    margin-bottom: 60px;
+
+    > div{
+        display: flex;
+        flex-direction: column;
+        counter-reset: steps;
+        align-items: center;
+        margin: 20px;
+        @include m.desktop{
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+    button::before{
+        @include m.increment;
+    }
+      
+}
+
+.functioning__btn {
+    @include m.functioning__btn;       
+}
+
+
+/* section choix restaurant*/
+#restaurant {
+    background: $color-bgd-main;
+    margin-top: 10px;
+    padding: 15px 0 50px;
+
+    > div{
+        @include m.tablette{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1300px;
+            margin: auto;
+        }
+    }
+}
+
+.restaurant__card{
+    width: 340px;
+    margin: 15px auto;
+    border-radius: 18px;
+    box-shadow: 0px 4px 5px #F5EDFF;
+    position: relative;
+    @include m.tablette{ 
+        margin: 50px;
+        width: 450px;   
+    }
+
+    &:hover{
+       @include m.hover;
+    }
+
+    img{
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+        border-radius: 18px 18px 0 0;       
+    }
+
+    div{
+        padding: 18px 0 18px 10px;
+        position: relative;
+         
+        //transition coeur
+        span::before{ 
+            @include m.heart;
+            font-weight: 400;  
+        }
+        
+        span::after{
+            @include m.heart(900);
+            @include m.heart-gradient;
+        }
+        span:hover::after{
+            @include m.heart-hover;
+        }
+    }
+    
+    h4{
+        color: black;
+    }
+}
+
+.banner::after{
+    @include m.new-banner;
+}
+
+
+
